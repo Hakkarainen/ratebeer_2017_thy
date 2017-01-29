@@ -77,7 +77,7 @@ class BreweriesController < ApplicationController
   def authenticate
     admin_accounts = { "admin" => "secret", "pekka" => "beer", "arto" => "foobar", "matti" => "ittam"}
     authenticate_or_request_with_http_basic do |username, password|
-      username == "admin" and password == "secret"
+      username == "admin" and password == admin_accounts["admin"]
     end
   end
 end
