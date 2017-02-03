@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   resources :beers
   resources :breweries
 
@@ -6,9 +7,11 @@ Rails.application.routes.draw do
   #get 'kaikki_bisset', to: 'beers#index'
   #get 'ratings', to: 'ratings#index'
   #get 'ratings/new', to:'ratings#new'
+  #get 'signup', to: 'users#new'
   #post 'ratings', to: 'ratings#create'
 
   resources :ratings, only: [:index, :new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -64,4 +67,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get 'signup', to: 'users#new'
 end
