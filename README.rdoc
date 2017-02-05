@@ -1,2 +1,2 @@
 
-http://calm-oasis-54742.herokuapp.com/breweries
+https://radiant-wildwood-98452.herokuapp.com/breweries
